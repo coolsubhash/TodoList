@@ -1,6 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 import Todolist from './Todolist';
+// import Images from './Images';
+// import Location from './Location';
 
 function App() {
   return (
@@ -33,6 +35,8 @@ function App() {
   </div>
 </nav>
 <Todolist/>
+{/* <Images/>
+<Location/> */}
     </>
   );
 }
