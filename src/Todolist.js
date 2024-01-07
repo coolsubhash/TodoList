@@ -36,7 +36,7 @@ const Todolist = () => {
   };
 
   return (
-    <div className="w-full max-w-sm bg-current p-5 content-center">
+    <div className="w-full max-w-sm bg-current p-5 content-center mx-auto h-48">
       <div className="md:flex md:items-center justify-between mb-6">
         <div className="md:w-2/3">
           <input
@@ -61,7 +61,7 @@ const Todolist = () => {
       <div className="text">
         {items.map((elem, ind) => (
           <div className="eachItem flex justify-between mt-3" key={ind}>
-            <h1 className="text-white">{elem}</h1>
+            <div className="text-white">{elem}</div>
             <div>
               <button
                 className="bg-blue-500 px-3 mr-2"
@@ -84,4 +84,3 @@ const Todolist = () => {
 };
 
 export default Todolist;
-
