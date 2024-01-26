@@ -8,20 +8,21 @@ const Todolist = () => {
   const addItem = () => {
     if (!inputData) {
       alert('Please enter a value');
-    } else {
-      if (editIndex !== null) {
-        // If editing, update the item at the editIndex
-        const updatedItems = [...items];
-        updatedItems[editIndex] = inputData;
-        setItems(updatedItems);
-        setEditIndex(null); // Reset editIndex
-      } else {
-        // If not editing, add a new item
-        setItems([...items, inputData]);
-      }
-
-      setInputData('');
+      return;
     }
+
+    if (editIndex !== null) {
+      // If editing, update the item at the editIndex
+      const updatedItems = [...items];
+      updatedItems[editIndex] = inputData;
+      setItems(updatedItems);
+      setEditIndex(null); // Reset editIndex
+    } else {
+      // If not editing, add a new item
+      setItems([...items, inputData]);
+    }
+
+    setInputData('');
   };
 
   const deleteItem = (id) => {
@@ -36,7 +37,7 @@ const Todolist = () => {
   };
 
   return (
-    <div className="w-full max-w-sm bg-current p-5 content-center mx-auto h-48">
+    <div className="w-full max-w-sm bg-current p-5 content-center mx-auto h-auto">
       <div className="md:flex md:items-center justify-between mb-6">
         <div className="md:w-2/3">
           <input
@@ -49,8 +50,7 @@ const Todolist = () => {
         </div>
         <div className="md:w-1/1">
           <button
-            className="shadow bg-purple-500 hover:bg-purple-400 
-            focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+            className="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
             type="button"
             onClick={addItem}
           >
@@ -58,9 +58,9 @@ const Todolist = () => {
           </button>
         </div>
       </div>
-      <div className="text">
+      <div className="text-fixed">
         {items.map((elem, ind) => (
-          <div className="eachItem flex justify-between mt-3" key={ind}>
+          <div className="each-item flex justify-between mt-3" key={ind}>
             <div className="text-white">{elem}</div>
             <div>
               <button
